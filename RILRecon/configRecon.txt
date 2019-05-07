@@ -1,0 +1,27 @@
+#configuration file for image reconstruction
+FOV = 150 150 150 #x,y,z.unit:mm
+GridSize = 1.0 #unit:mm
+TorHalfWidth = 1.0 #unit:mm
+TorSigma = 0.45 #unit:mm
+NumberOfIterations = 5
+
+Normalization = 2 #0:no,2:useImage,3:useCoincidenceData
+ThreshNorm = 0.002 #Threshold For Normalization. Should Be A Small Number.
+
+Regularization = 0 #0:no,1:yes
+BetaR = 0.015 #Regularization strength
+BlurR = 3 #0:no,1:yesWithSpatialInvariant,3:yesWithSpatialVariant
+XsigmaRB = 0.55 #unit:mm.NeedWhenBlurR=1
+YsigmaRB = 0.55 #unit:mm.NeedWhenBlurR=1
+ZsigmaRB = 0.53 #unit:mm.NeedWhenBlurR=1
+BlurParaFile = blurPara.txt #NeedWhenBlurR=3
+BlurParaNum = 5 3 #NeedWhenBlurR=3.First:NumParaForBlur,Second:NumCoeffForEachPara
+RBCubeSize = 3 3 3 #Unit:VoxelNum(NOTmm).NeedWhenBlurR=3.MustBeOdd
+
+ImagePSF = 0  #0:notUsing,1:SpatialInvariant,2:SpatialInvariantMask
+PSFSigma = 1.0 1.0 1.0 # Need when ImagePSF=1
+MaskFile = psfimage # Need when ImagePSF=2
+VoxelSize = 19 5 5 # Need when ImagePSF=2
+
+
+
